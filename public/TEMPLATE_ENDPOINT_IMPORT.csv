@@ -1,0 +1,5 @@
+url,description,authType,username,password,token,headerName,headerValue
+https://api.example.com/health,Example API (no auth),none,,,,,
+https://api.example.com/status,Example with Basic Auth,basic,myusername,mypassword,,,
+https://api.example.com/ping,Example with Bearer Token,bearer,,,my-bearer-token,,
+https://api.example.com/check,Example with API Key,apikey,,,,X-API-Key,my-api-key-value

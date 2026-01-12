@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:og="http://ogp.me/ns#">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Observation Tank - API Endpoint Monitor Visualization</title>
+
+    <!-- Primary Meta Tags -->
+    <meta
+      name="title"
+      content="Observation Tank - API Endpoint Monitor with 3D Visualization"
+    />
+    <meta
+      name="description"
+      content="Monitor your API endpoints in real-time with a beautiful 3D aquarium visualization. Each fish represents an endpoint - healthy fish swim normally, while failing endpoints show dead fish."
+    />
+    <meta
+      name="keywords"
+      content="API monitoring, endpoint health check, 3D visualization, React, Three.js, WebGL, real-time monitoring, developer tools"
+    />
+    <meta name="author" content="Observation Tank" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#1f1f1f" />
+    <meta name="color-scheme" content="dark light" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://observation-tank.app/" />
+
+    <!-- Favicons -->
+    <link
+      rel="icon"
+      href="/favicon-dark.png"
+      type="image/png"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      rel="icon"
+      href="/favicon-light.png"
+      type="image/png"
+      media="(prefers-color-scheme: light)"
+    />
+    <link rel="apple-touch-icon" href="/favicon-light.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://observation-tank.app/" />
+    <meta
+      property="og:title"
+      content="Observation Tank - API Endpoint Monitor Visualization"
+    />
+    <meta
+      property="og:description"
+      content="Monitor your API endpoints in real-time with a beautiful 3D aquarium visualization. Each fish represents an endpoint - healthy fish swim normally, while failing endpoints show dead fish."
+    />
+    <meta property="og:image" content="/og-image.png" />
+    <meta
+      property="og:image:alt"
+      content="3D aquarium with colorful fish representing API endpoints"
+    />
+    <meta property="og:site_name" content="Observation Tank" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://hovalabs.com/" />
+    <meta
+      name="twitter:title"
+      content="Observation Tank - API Endpoint Monitor Visualization"
+    />
+    <meta
+      name="twitter:description"
+      content="Monitor your API endpoints in real-time with a beautiful 3D aquarium visualization. Each fish represents an endpoint."
+    />
+    <meta name="twitter:image" content="/og-image.png" />
+    <meta
+      name="twitter:image:alt"
+      content="3D aquarium with colorful fish representing API endpoints"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Observation Tank",
+        "description": "Monitor your API endpoints in real-time with a beautiful 3D aquarium visualization",
+        "url": "https://observation-tank.app/",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web Browser",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "featureList": [
+          "Real-time API endpoint monitoring",
+          "3D visualization with Three.js",
+          "Visual health indicators",
+          "Support for multiple authentication types",
+          "Customizable endpoint colors"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

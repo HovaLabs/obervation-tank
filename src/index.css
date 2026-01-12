@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom title font */
+@font-face {
+  font-family: "Nurse Holiday";
+  src: url("/nurse-holiday.regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Dark theme (default) - Deep Ocean */
+:root {
+  /* Based on tank water [0, 0.25, 0.5] and floor [0, 0.2, 0.3] */
+  --bg-primary: #0a1520;
+  --bg-secondary: #0d1f2d;
+  --bg-tertiary: #102535;
+  --bg-deadfish-primary: #1a1215;
+
+  --surface-primary: rgba(0, 64, 128, 0.15);
+  --surface-secondary: rgba(0, 51, 77, 0.4);
+  --surface-tertiary: rgba(0, 40, 60, 0.5);
+
+  --text-primary: #e8f4f8;
+  --text-secondary: #a0c4d4;
+  --text-muted: #6a9ab0;
+  --text-placeholder: #4a7a90;
+
+  /* Accent from tank water cyan/teal */
+  --accent-primary: #4fc3f7;
+  --accent-hover: #81d4fa;
+  --accent-bg: rgba(79, 195, 247, 0.15);
+  --accent-bg-hover: rgba(79, 195, 247, 0.25);
+
+  /* Success - based on coral greens [0, 0.5, 0.1] */
+  --success: #00cc44;
+  --success-bg: rgba(0, 204, 68, 0.15);
+  --success-border: rgba(0, 204, 68, 0.3);
+
+  /* Error - based on coral red [0.7, 0, 0.1] */
+  --error: #e63946;
+  --error-light: #ff6b6b;
+  --error-lighter: #ff8a80;
+  --error-bg: rgba(230, 57, 70, 0.15);
+  --error-bg-hover: rgba(230, 57, 70, 0.25);
+  --error-border: rgba(230, 57, 70, 0.3);
+
+  --border-primary: rgba(79, 195, 247, 0.15);
+  --border-secondary: rgba(79, 195, 247, 0.25);
+
+  --header-bg: rgba(10, 21, 32, 0.85);
+
+  /* Filter to convert black SVG to --text-secondary (#a0c4d4) */
+  --logo-filter: invert(78%) sepia(12%) saturate(531%) hue-rotate(158deg)
+    brightness(97%) contrast(87%);
+
+  --pending-bg: #4a7a90;
+}
+
+/* Light theme - Shallow Water / Surface */
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Light aqua tints inspired by sunlit water surface */
+    --bg-primary: #e8f4f8;
+    --bg-secondary: #d4e8f0;
+    --bg-tertiary: #c0dce8;
+    --bg-deadfish-primary: #f8eeee;
+
+    --surface-primary: rgba(0, 64, 128, 0.05);
+    --surface-secondary: rgba(0, 64, 128, 0.08);
+    --surface-tertiary: rgba(0, 64, 128, 0.12);
+
+    --text-primary: #0a1520;
+    --text-secondary: #1a3a4a;
+    --text-muted: #3a5a6a;
+    --text-placeholder: #6a8a9a;
+
+    /* Deeper ocean blue for accent in light mode */
+    --accent-primary: #0077a8;
+    --accent-hover: #005580;
+    --accent-bg: rgba(0, 119, 168, 0.12);
+    --accent-bg-hover: rgba(0, 119, 168, 0.18);
+
+    /* Success - deeper green for light mode */
+    --success: #00884d;
+    --success-bg: rgba(0, 136, 77, 0.12);
+    --success-border: rgba(0, 136, 77, 0.25);
+
+    /* Error - deeper coral red for light mode */
+    --error: #c62828;
+    --error-light: #d32f2f;
+    --error-lighter: #e53935;
+    --error-bg: rgba(198, 40, 40, 0.1);
+    --error-bg-hover: rgba(198, 40, 40, 0.18);
+    --error-border: rgba(198, 40, 40, 0.25);
+
+    --border-primary: rgba(0, 77, 108, 0.15);
+    --border-secondary: rgba(0, 77, 108, 0.25);
+
+    --header-bg: rgba(232, 244, 248, 0.9);
+
+    /* Filter to convert black SVG to --text-secondary (#1a3a4a) */
+    --logo-filter: invert(17%) sepia(26%) saturate(868%) hue-rotate(159deg)
+      brightness(95%) contrast(92%);
+
+    --pending-bg: #6a8a9a;
+  }
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+@layer components {
+  /* Navigation link */
+  .nav-link {
+    @apply text-text-secondary no-underline px-4 py-2 rounded-md text-sm transition-all duration-200 hover:text-text-primary hover:bg-surface-secondary;
+  }
+
+  .nav-link-active {
+    @apply text-accent-primary bg-accent-bg;
+  }
+
+  /* Button variants */
+  .btn-primary {
+    @apply px-6 py-3 bg-accent-primary text-bg-primary rounded-lg font-semibold text-sm cursor-pointer transition-all duration-200 hover:bg-accent-hover;
+  }
+
+  .btn-ping {
+    @apply px-4 py-2 rounded text-xs cursor-pointer transition-all duration-200 bg-accent-bg-hover text-accent-primary border border-accent-primary hover:bg-accent-primary hover:text-bg-primary;
+  }
+
+  .btn-remove {
+    @apply px-4 py-2 rounded text-xs cursor-pointer transition-all duration-200 bg-error-bg-hover text-error border border-error hover:bg-error hover:text-white;
+  }
+
+  /* Input variants */
+  .input-base {
+    @apply px-4 py-3 border border-border-secondary rounded-md bg-surface-tertiary text-text-primary text-sm placeholder:text-text-placeholder focus:outline-none focus:border-accent-primary;
+  }
+
+  /* Status badges */
+  .badge {
+    @apply px-2 py-0.5 rounded text-[11px] font-semibold uppercase;
+  }
+
+  .badge-pending {
+    @apply badge bg-pending-bg text-white;
+  }
+
+  .badge-ok {
+    @apply badge bg-success text-white;
+  }
+
+  .badge-error {
+    @apply badge bg-error text-white;
+  }
+
+  .badge-auth {
+    @apply badge bg-accent-bg text-accent-primary border border-accent-primary;
+  }
+
+  /* Section card */
+  .section-card {
+    @apply bg-surface-primary rounded-xl p-6 mb-6;
+  }
+
+  /* Endpoint item card */
+  .endpoint-card {
+    @apply flex items-center gap-4 p-4 bg-surface-secondary rounded-lg mb-3 last:mb-0;
+  }
+}
